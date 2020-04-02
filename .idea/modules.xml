@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/aliyun_emas.iml" filepath="$PROJECT_DIR$/aliyun_emas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/aliyun_emas_android.iml" filepath="$PROJECT_DIR$/android/aliyun_emas_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/aliyun_emas_example_android.iml" filepath="$PROJECT_DIR$/example/android/aliyun_emas_example_android.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,27 @@
+name: aliyun_emas
+description: 阿里云EMAS平台插件
+version: 0.0.1
+author: Timothy<ygmpkk@gmail.com>
+homepage: https://github/ygmpkk/aliyun_emas
+
+dependencies:
+  meta: ^1.0.4
+  platform: ^2.2.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  mockito: ^4.1.1
+  e2e: ^0.2.1
+  flutter_driver:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  plugin:
+    androidPackage: com.ygmpkk.aliyun_emas
+    pluginClass: AliyunEmasPlugin
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"

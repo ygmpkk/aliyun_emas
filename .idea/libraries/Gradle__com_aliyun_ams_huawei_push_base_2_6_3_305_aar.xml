@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.aliyun.ams:huawei-push-base:2.6.3.305@aar" type="AndroidModuleLibraryType">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b492536fdd279617b66534dd371fcca9/huawei-push-base-2.6.3.305/jars/libs/HiAnalytics_SDK_2.1.4.300.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b492536fdd279617b66534dd371fcca9/huawei-push-base-2.6.3.305/jars/libs/UpdateSdk_release_V2.0.3.301.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b492536fdd279617b66534dd371fcca9/huawei-push-base-2.6.3.305/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

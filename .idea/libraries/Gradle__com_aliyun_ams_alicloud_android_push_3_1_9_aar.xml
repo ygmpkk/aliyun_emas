@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: com.aliyun.ams:alicloud-android-push:3.1.9@aar" type="AndroidModuleLibraryType">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b58fdee0b76a5c4dde08df6c412bf6ea/jetified-alicloud-android-push-3.1.9/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
