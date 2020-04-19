@@ -42,10 +42,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         manifestPlaceholders = [
-                HUAWEI_APPID: "101687971",
-                ALIYUN_MAN_CHANNEL: "",
-                VIVO_APIKEY : "",
-                OPPO_APPID  : "",
+                INSTALL_CHANNEL: "default-channel",
+                HUAWEI_APPID   : "'101999371'",
+                OPPO_APPID     : "",
+                VIVO_APIKEY    : "",
+                MI_APPID       : "'2882303761518360587'",
+                MI_APPKEY      : "'5891836049587'",
         ]
 
         // 小米推送

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="INSTALL_CHANNEL"></string>
+    <string name="MI_APPID"></string>
+    <string name="MI_APPKEY"></string>
+    <string name="HUAWEI_APPID"></string>
+    <string name="VIVO_APIKEY"></string>
+    <string name="VIVO_APPID"></string>
+    <string name="OPPO_APPKEY"></string>
+    <string name="OPPO_APPSECRET"></string>
+</resources>

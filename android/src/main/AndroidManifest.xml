@@ -7,29 +7,35 @@
         android:networkSecurityConfig="@xml/network_security_config"
         tools:replace="android:allowBackup">
 
-
         <meta-data
             android:name="ALIYUN_MAN_CHANNEL"
-            android:value="${INSTALL_CHANNEL}"></meta-data>
+            android:value="@string/INSTALL_CHANNEL" />
 
         <meta-data
             android:name="MI_APPID"
-            android:value="${MI_APPID}" />
+            android:value="@string/MI_APPID" />
         <meta-data
             android:name="MI_APPKEY"
-            android:value="${MI_APPKEY}" />
+            android:value="@string/MI_APPKEY" />
+
+        <meta-data
+            android:name="OPPO_APPKEY"
+            android:value="@string/OPPO_APPKEY" />
+        <meta-data
+            android:name="OPPO_APPSECRET"
+            android:value="@string/OPPO_APPSECRET" />
 
         <meta-data
             android:name="com.huawei.hms.client.appid"
-            android:value="appid=${HUAWEI_APPID}" />
+            android:value="@string/HUAWEI_APPID" />
 
         <meta-data
             android:name="com.vivo.push.api_key"
-            android:value="${VIVO_APIKEY}" />
+            android:value="@string/VIVO_APIKEY" />
 
         <meta-data
             android:name="com.vivo.push.app_id"
-            android:value="${OPPO_APPID}" />
+            android:value="@string/VIVO_APPID" />
 
         <activity
             android:name=".AliyunEmasPopupPushActivity"
@@ -61,4 +67,8 @@
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--for huawei-->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
 </manifest>

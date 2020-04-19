@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -11,8 +12,23 @@ import './src/model.dart';
 export './src/model.dart';
 
 class AliyunEmas {
-  static final AliyunEmasPush push = AliyunEmasPush();
-  static final AliyunEmasEventTrack eventTrack = AliyunEmasEventTrack();
+  factory AliyunEmas() => _instance;
+
+  @visibleForTesting
+  AliyunEmas.private(MethodChannel channel, Platform platform)
+      : channel = channel,
+        platform = platform;
+
+  static final AliyunEmas _instance = AliyunEmas.private(
+      const MethodChannel('ygmpkk.aliyun_emas/emas'), const LocalPlatform());
+
+  final MethodChannel channel;
+  final Platform platform;
+
+  static final AliyunEmasPush push =
+      AliyunEmasPush(channel: _instance.channel, platform: _instance.platform);
+  static final AliyunEmasEventTrack eventTrack = AliyunEmasEventTrack(
+      channel: _instance.channel, platform: _instance.platform);
 }
 
 typedef Future<dynamic> PushMessageHandler<T>(T message);
@@ -63,18 +79,8 @@ extension TagTargetExtension on TagTarget {
 }
 
 class AliyunEmasPush {
-  factory AliyunEmasPush() => _instance;
-
-  @visibleForTesting
-  AliyunEmasPush.private(MethodChannel channel, Platform platform)
-      : _channel = channel,
-        _platform = platform;
-
-  static final AliyunEmasPush _instance = AliyunEmasPush.private(
-      const MethodChannel('ygmpkk.aliyun_emas/emas'), const LocalPlatform());
-
-  final MethodChannel _channel;
-  final Platform _platform;
+  final MethodChannel channel;
+  final Platform platform;
 
   /// 消息接收回调
   PushMessageHandler<String> _onToken;
@@ -102,6 +108,8 @@ class AliyunEmasPush {
   /// 在iOS设备上，需求请求通知权限
   PushMessageHandler<IosNotificationSettings> _onIosNotificationRegistered;
 
+  AliyunEmasPush({this.channel, this.platform});
+
   Future<void> listenOn({
     PushMessageHandler<String> onInit,
     PushMessageHandler<String> onToken,
@@ -124,7 +132,7 @@ class AliyunEmasPush {
     _onNotificationReceivedInApp = onNotificationReceivedInApp;
     _onIosNotificationRegistered = onIosNotificationRegistered;
 
-    _channel.setMethodCallHandler(_handleMethod);
+    channel.setMethodCallHandler(_handleMethod);
   }
 
   Future<dynamic> _handleMethod(MethodCall call) async {
@@ -169,11 +177,12 @@ class AliyunEmasPush {
       case "onNotificationOpened":
         return _onNotificationOpened(
           PushNotificationOpened(
-              title: call.arguments["title"],
-              summary: call.arguments["summary"],
-              extras: call.arguments["extras"],
-              subtitle: call.arguments["subtitle"],
-              badge: call.arguments["badge"]),
+            title: call.arguments["title"],
+            summary: call.arguments["summary"],
+            extras: call.arguments["extras"],
+            subtitle: call.arguments["subtitle"],
+            badge: call.arguments["badge"],
+          ),
         );
 
       case "onNotificationRemoved":
@@ -201,70 +210,81 @@ class AliyunEmasPush {
   FutureOr<bool> requestNotificationPermissions(
     IosNotificationSettings iosSettings,
   ) {
-    if (!_platform.isIOS) {
+    if (!platform.isIOS) {
       return null;
     }
 
-    return _channel.invokeMethod<bool>(
+    return channel.invokeMethod<bool>(
       'requestNotificationPermissions',
       iosSettings.toMap(),
     );
   }
 
-  FutureOr<bool> get getIosNotificationSettingStatus async {
-    if (!_platform.isIOS) {
+  FutureOr<PushNotificationOpened> get getLatestPushNotificationOpened async {
+    dynamic result =
+        await channel.invokeMethod("getLatestPushNotificationOpened");
+    if (result == null) {
       return null;
     }
 
-    return _channel.invokeMethod<bool>("getNotificationSettingStatus");
+    return PushNotificationOpened(
+      title: result["title"],
+      summary: result["summary"],
+      extras: result["extras"],
+    );
+  }
+
+  // 名字需要优化一下，Android已经实现了通知开关判断
+  FutureOr<bool> get getIosNotificationSettingStatus async {
+    return channel.invokeMethod<bool>("getNotificationSettingStatus");
   }
 
   FutureOr<void> openAppSettings() async {
-    if (!_platform.isIOS) {
+    if (!platform.isIOS) {
       return null;
     }
 
-    return _channel.invokeMethod("openAppSettings");
+    return channel.invokeMethod("openAppSettings");
   }
 
   Future<void> setDebug() async {
-    return _channel.invokeMethod('setDebug');
+    return channel.invokeMethod('setDebug');
   }
 
   /// 获取设备标识
   Future<String> get getDeviceId async {
-    return await _channel.invokeMethod<String>('getDeviceId');
+    return await channel.invokeMethod<String>('getDeviceId');
   }
 
   /// 打开推送通道
   Future<bool> turnOnPushChannel() async {
-    await _channel.invokeMethod("turnOnPushChannel");
+    await channel.invokeMethod("turnOnPushChannel");
     return true;
   }
 
   /// 关闭推送通道
   Future<bool> turnOffPushChannel() async {
-    await _channel.invokeMethod("turnOnPushChannel");
+    await channel.invokeMethod("turnOffPushChannel");
     return false;
   }
 
   /// 查询推送通道状态
   Future<String> checkPushChannelStatus() async {
-    return _channel.invokeMethod("checkPushChannelStatus");
+    return channel.invokeMethod("checkPushChannelStatus");
   }
 
   /// 绑定账号
   Future<void> bindAccount({
     String userId,
   }) async {
-    return _channel.invokeMethod("bindAccount", {
+    return channel.invokeMethod("bindAccount", {
       "userId": userId,
     });
   }
 
   /// 解绑账号
   Future<void> unbindAccount() async {
-    return _channel.invokeMethod("unbindAccount");
+    return channel.invokeMethod("unbindAccount");
   }
 
   /// 绑定标签
@@ -273,7 +293,7 @@ class AliyunEmasPush {
     List<String> tags,
     String aliasId,
   }) async {
-    return _channel.invokeMethod("bindTag", {
+    return channel.invokeMethod("bindTag", {
       "target": target.name,
       "tags": tags,
       "aliasId": aliasId,
@@ -286,7 +306,7 @@ class AliyunEmasPush {
     List<String> tags,
     String aliasId,
   }) async {
-    return _channel.invokeMethod("removeTag", {
+    return channel.invokeMethod("removeTag", {
       "target": target.name,
       "tags": tags,
       "aliasId": aliasId,
@@ -299,7 +319,7 @@ class AliyunEmasPush {
   Future<void> addAlias({
     String aliasId,
   }) async {
-    return _channel.invokeMethod("addAlias", {
+    return channel.invokeMethod("addAlias", {
       "aliasId": aliasId,
     });
   }
@@ -308,7 +328,7 @@ class AliyunEmasPush {
   Future<void> removeAlias({
     String aliasId,
   }) async {
-    return _channel.invokeMethod("removeAlias", {
+    return channel.invokeMethod("removeAlias", {
       "aliasId": aliasId,
     });
   }
@@ -322,7 +342,7 @@ class AliyunEmasPush {
     @required int endHour,
     @required int endMinute,
   }) async {
-    return _channel.invokeMethod("setDoNotDisturb", {
+    return channel.invokeMethod("setDoNotDisturb", {
       "startHour": startHour,
       "startMinute": startMinute,
       "endHour": endHour,
@@ -332,70 +352,46 @@ class AliyunEmasPush {
 
   /// 关闭免打扰功能
   Future<void> closeDoNotDisturbMode() async {
-    return _channel.invokeMethod("closeDoNotDisturbMode");
+    return channel.invokeMethod("closeDoNotDisturbMode");
   }
 
   /// 删除所有通知接口
   Future<void> clearNotifications() async {
-    return _channel.invokeMethod("clearNotifications");
+    return channel.invokeMethod("clearNotifications");
   }
 
   /// 绑定电话号
   Future<void> bindPhoneNumber({@required String mobile}) async {
-    return _channel.invokeMethod("bindPhoneNumber", {"mobile": mobile});
+    return channel.invokeMethod("bindPhoneNumber", {"mobile": mobile});
   }
 
   /// 解绑电话号
   Future<void> unbindPhoneNumber() async {
-    return _channel.invokeMethod("unbindPhoneNumber");
-  }
-
-  /// 用户注册
-  Future<void> userRegister({
-    @required String userId,
-  }) async {
-    return _channel.invokeMethod("userRegister", {"userId": userId});
-  }
-
-  /// 登录/注销
-  Future<void> updateUserAccount({
-    @required String userId,
-    @required String username,
-  }) async {
-    return _channel.invokeMethod("updateUserAccount", {
-      "userId": userId,
-      "username": username,
-    });
+    return channel.invokeMethod("unbindPhoneNumber");
   }
 }
 
 class AliyunEmasEventTrack {
-  factory AliyunEmasEventTrack() => _instance;
+  final MethodChannel channel;
+  final Platform platform;
 
-  @visibleForTesting
-  AliyunEmasEventTrack.private(MethodChannel channel, Platform platform)
-      : _channel = channel;
-
-  static final AliyunEmasEventTrack _instance = AliyunEmasEventTrack.private(
-      const MethodChannel('ygmpkk.aliyun_emas/emas'), const LocalPlatform());
-
-  final MethodChannel _channel;
+  AliyunEmasEventTrack({this.channel, this.platform});
 
   /// 进入页面
   Future<void> pageAppear() async {
-    return _channel.invokeMethod("pageAppear");
+    return channel.invokeMethod("pageAppear");
   }
 
   /// 退出页面
   Future<void> pageDisAppear() async {
-    return _channel.invokeMethod("pageDisAppear");
+    return channel.invokeMethod("pageDisAppear");
   }
 
   /// 更新页面埋点
   Future<void> updatePageProperties({
     @required Map<String, String> properties,
   }) async {
-    return _channel.invokeMethod("updatePageProperties", {
+    return channel.invokeMethod("updatePageProperties", {
       "properties": properties,
     });
   }
@@ -407,7 +403,7 @@ class AliyunEmasEventTrack {
     int duration,
     Map<String, String> properties,
   }) async {
-    return _channel.invokeMethod("trackPage", {
+    return channel.invokeMethod("trackPage", {
       "pageName": pageName,
       "referrer": referrer,
       "duration": duration,
@@ -422,7 +418,7 @@ class AliyunEmasEventTrack {
     int duration,
     Map<String, String> properties,
   }) async {
-    return _channel.invokeMethod("trackEvent", {
+    return channel.invokeMethod("trackEvent", {
       "pageName": pageName,
       "eventName": eventName,
       "duration": duration,
@@ -432,7 +428,26 @@ class AliyunEmasEventTrack {
 
   /// 关闭自动页面埋点
   Future<void> turnOffAutoPageTrack() async {
-    return _channel.invokeMethod("turnOffAutoPageTrack");
+    return channel.invokeMethod("turnOffAutoPageTrack");
+  }
+
+
+  /// 用户注册
+  Future<void> userRegister({
+    @required String userId,
+  }) async {
+    return channel.invokeMethod("userRegister", {"userId": userId});
+  }
+
+  /// 登录/注销
+  Future<void> updateUserAccount({
+    @required String userId,
+    @required String username,
+  }) async {
+    return channel.invokeMethod("updateUserAccount", {
+      "userId": userId,
+      "username": username,
+    });
   }
 }
 

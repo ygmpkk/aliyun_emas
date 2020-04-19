@@ -25,6 +25,8 @@ static FlutterError *getFlutterError(NSError *error) {
 @implementation AliyunEmasPlugin {
     // iOS 10通知中心
     UNUserNotificationCenter *_notificationCenter API_AVAILABLE(ios(10.0));
+    NSMutableDictionary *_latestPayload;
+    Boolean *_latestPayloadOpened;
     
     FlutterMethodChannel *_channel;
     ALBBMANAnalytics *_man;
@@ -191,11 +193,22 @@ static FlutterError *getFlutterError(NSError *error) {
             break;
         }
         
+        CASE(@"getLatestPushNotificationOpened") {
+            [self getLatestPushNotificationOpened:call result:result];
+            break;
+        }
+        
         DEFAULT {
             result(FlutterMethodNotImplemented);
             break;
         }
     }
+}
+
+- (void)getLatestPushNotificationOpened:(FlutterMethodCall *)call result:(FlutterResult)result {
+    result(_latestPayload);
+    _latestPayload = nil;
+    _latestPayloadOpened = true;
 }
 
 - (void)requestNotificationPermissions:(FlutterMethodCall *)call
@@ -407,7 +420,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Mobile Analysis
     _man = [ALBBMANAnalytics getInstance];
-    [_man turnOnDebug];
+//    [_man turnOnDebug];
     [_man autoInit];
     
     //    [man setAppVersion: @""];
@@ -415,6 +428,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     return YES;
 }
+
 
 #pragma mark - APNs Register
 
@@ -597,10 +611,6 @@ API_AVAILABLE(ios(10.0)) {
     NSDictionary *userInfo = content.userInfo;
     NSDictionary *extras = [userInfo valueForKey:@"Extras"];
     
-//    if (extras == nil) {
-//        extras = @{};
-//    }
-    
     // 通知角标数清0
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     // 同步角标数到服务端
@@ -615,13 +625,17 @@ API_AVAILABLE(ios(10.0)) {
     [payload setValue:content.title forKey:@"title"];
     [payload setValue:content.body forKey:@"summary"];
     [payload setValue:content.badge forKey:@"badge"];
-
     
     if (extras != nil) {
         [payload setObject:extras forKey:@"extras"];
     }
     
-    [_channel invokeMethod:@"onNotificationOpened" arguments:payload];
+    UIApplicationState applicationState = [[UIApplication sharedApplication] applicationState];
+    if (applicationState == UIApplicationStateInactive && _latestPayloadOpened != true) {
+        _latestPayload = payload;
+    }
+    
+     [_channel invokeMethod:@"onNotificationOpened" arguments:payload];
 }
 
 - (void)handleNotificationRemoved:(UNNotification *)notification

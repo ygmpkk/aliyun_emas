@@ -7,58 +7,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d92739ee-be9f-426b-8e93-dc15a5a3922e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/timothy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_beacon_1_0_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_push_3_1_6_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_third_push_3_0_10_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_ut_5_4_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_utdid_1_1_5_4_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_utils_1_1_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_emas_services_1_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_huawei_push_2_6_3_305_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_huawei_push_base_2_6_3_305_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_aliyun_ams_meizu_push_3_8_3_fix_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_guava_15_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_java5_15_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/consumer-consumer-proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasIntentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPopupPushActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/android/app/src/main/java/com/ygmpkk/aliyun_emas_example/MyApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/dictionaries/timothy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_beacon_1_0_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_push_3_1_6_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_third_push_3_0_10_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_ut_5_4_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_utdid_1_1_5_4_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_alicloud_android_utils_1_1_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_emas_services_1_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_huawei_push_2_6_3_305_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_huawei_push_base_2_6_3_305_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_aliyun_ams_meizu_push_3_8_3_fix_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__com_google_guava_guava_15_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/libraries/Gradle__org_jetbrains_annotations_java5_15_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/consumer-consumer-proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasIntentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPopupPushActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/src/main/java/com/ygmpkk/aliyun_emas_example/MyApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/ios/Runner/AliyunEmasServices-Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/ios/Runner/Runner.entitlements" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Runner/AliyunEmasServices-Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/ios/Runner/Runner.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/android/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasIntentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPopupPushActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPopupPushActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/java/com/ygmpkk/aliyun_emas_example/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/java/com/ygmpkk/aliyun_emas_example/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasIntentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPopupPushActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPopupPushActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/src/main/java/com/ygmpkk/aliyun_emas_example/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/example/android/app/src/main/java/com/ygmpkk/aliyun_emas_example/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/ios/Classes/AliyunEmasPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/ios/Classes/AliyunEmasPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/ios/aliyun_emas.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/ios/aliyun_emas.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/lib/aliyun_emas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/aliyun_emas/lib/aliyun_emas.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/AliyunEmasPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/AliyunEmasPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/aliyun_emas.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/aliyun_emas.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/aliyun_emas.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/aliyun_emas.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -75,17 +53,23 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="18221913006875" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="HMQNW20320000607" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/aliyun_emas.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="409" column="35" lean-forward="true" selection-start-line="409" selection-start-column="35" selection-end-line="409" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -93,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ios/Classes/AliyunEmasPlugin.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2304">
-              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+            <state relative-caret-position="3648">
+              <caret line="192" selection-start-line="192" selection-end-line="192" />
             </state>
           </provider>
         </entry>
@@ -111,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="741">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
             </state>
           </provider>
@@ -120,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPlugin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
+            <state relative-caret-position="6232">
               <caret line="328" column="51" selection-start-line="328" selection-start-column="42" selection-end-line="328" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,9 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>configu</find>
-      <find>configure</find>
-      <find>confug</find>
       <find>source</find>
       <find>framework</find>
       <find>_iosSettingsStreamController</find>
@@ -163,6 +144,9 @@
       <find>userInf</find>
       <find>userInfo</find>
       <find>turnoff</find>
+      <find>_instance</find>
+      <find>AliyunEmasEventTrack</find>
+      <find>AliyunEmasPush</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,6 +162,7 @@
         <option value="$PROJECT_DIR$/ios/aliyun_emas.podspec" />
         <option value="$PROJECT_DIR$/ios/Classes/AliyunEmasPlugin.m" />
         <option value="$PROJECT_DIR$/lib/aliyun_emas.dart" />
+        <option value="$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java" />
       </list>
     </option>
   </component>
@@ -215,6 +200,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -255,7 +241,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -324,6 +309,17 @@
               <item name="~/Workspace/particle/flutter-plugins/packages/aliyun_emas" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="ios" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="aliyun_emas" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Workspace/particle/flutter-plugins/packages/aliyun_emas" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="aliyun_emas" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Workspace/particle/flutter-plugins/packages/aliyun_emas" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="lib" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -377,10 +373,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49543378" visible="true" weight="0.18421052" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49543378" visible="true" weight="0.18415418" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.5045662" side_tool="true" weight="0.18421052" />
       <window_info id="Image Layers" order="3" />
@@ -395,8 +390,8 @@
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.32938564" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.32938564" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.32864544" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" sideWeight="0.498394" visible="true" weight="0.32853284" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.501606" side_tool="true" visible="true" weight="0.32853284" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32924962" />
@@ -504,6 +499,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/aliyun_emas.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/Classes/AliyunEmasPlugin.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3648">
+          <caret line="192" selection-start-line="192" selection-end-line="192" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ios/aliyun_emas.podspec">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -513,34 +529,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="741">
           <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Classes/AliyunEmasPlugin.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2304">
-          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/java/com/ygmpkk/aliyun_emas/AliyunEmasPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
+        <state relative-caret-position="6232">
           <caret line="328" column="51" selection-start-line="328" selection-start-column="42" selection-end-line="328" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/aliyun_emas.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="409" column="35" lean-forward="true" selection-start-line="409" selection-start-column="35" selection-end-line="409" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
