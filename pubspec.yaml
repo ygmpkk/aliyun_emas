@@ -2,7 +2,7 @@ name: aliyun_emas
 description: 阿里云EMAS平台插件
 version: 0.0.1
 author: Timothy<ygmpkk@gmail.com>
-homepage: https://github/ygmpkk/aliyun_emas
+homepage: https://github.com/ygmpkk/aliyun_emas
 
 dependencies:
   meta: ^1.0.4
