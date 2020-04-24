@@ -16,8 +16,7 @@ Aliyun emas plugins for Flutter.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'AlicloudPush', '~> 1.9.9.1'
-  s.dependency 'AlicloudMANLight', '~> 1.1.0'
+  s.dependency 'EMASPushNonUT', '1.9.9.1'
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.

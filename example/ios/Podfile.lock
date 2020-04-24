@@ -1,19 +1,12 @@
 PODS:
-  - AlicloudMAN (1.0.13):
-    - AlicloudUT
-    - AlicloudUtils
-  - AlicloudPush (1.9.9.1):
-    - AlicloudUT
-    - AlicloudUtils
-  - AlicloudUT (5.2.0.12):
-    - AlicloudUTDID
-  - AlicloudUTDID (1.1.0.19)
-  - AlicloudUtils (1.3.7):
+  - AlicloudUTDID (1.5.0.90)
+  - AlicloudUtils (1.3.8):
     - AlicloudUTDID
   - aliyun_emas (0.0.1):
-    - AlicloudMAN (~> 1.0.12)
-    - AlicloudPush (~> 1.9.9)
+    - EMASPushNonUT (= 1.9.9.1)
     - Flutter
+  - EMASPushNonUT (1.9.9.1):
+    - AlicloudUtils
   - Flutter (1.0.0)
 
 DEPENDENCIES:
@@ -22,11 +15,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/aliyun/aliyun-specs.git:
-    - AlicloudMAN
-    - AlicloudPush
-    - AlicloudUT
     - AlicloudUTDID
     - AlicloudUtils
+    - EMASPushNonUT
 
 EXTERNAL SOURCES:
   aliyun_emas:
@@ -35,14 +26,12 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  AlicloudMAN: b3e4eaaceab24e331377c6b78d29f4a477e55cde
-  AlicloudPush: c87e2fae0e3909cad267d9a34379ae865c6b4ea0
-  AlicloudUT: b7673ac4e19b89857a22ca5651880c80525b5650
-  AlicloudUTDID: 79f509c3e997ef85fe307f8bfb2bb3be27f7e205
-  AlicloudUtils: ec441e41aa746d779c2c3958aa9489c59cb434ea
-  aliyun_emas: 8485abdcb2c57082949ac24545edd8c072066cbb
+  AlicloudUTDID: 314b33cabbe33cf4b648a6789cc5cb91ba5065e4
+  AlicloudUtils: 3e1106c726d4f9c80272b6e2135c561936173a10
+  aliyun_emas: 0c6f99863bbabcf914b46c5110a04f486004b278
+  EMASPushNonUT: 424899d3c9e1e44588296ec21347ef4e60917f18
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
 
-PODFILE CHECKSUM: 8f087849f02f9a32f5ee416163e391f5a1faccbe
+PODFILE CHECKSUM: 60feb1a742918484550764f1069817bd4b4e05af
 
 COCOAPODS: 1.8.4
