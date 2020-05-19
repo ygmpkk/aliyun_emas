@@ -1,6 +1,7 @@
 
 #import "AliyunEmasPlugin.h"
 #import <CloudPushSDK/CloudPushSDK.h>
+#import <AlicloudMobileAnalitics/ALBBMAN.h>
 
 // iOS 10 notification
 #import <UserNotifications/UserNotifications.h>
@@ -28,6 +29,7 @@ static FlutterError *getFlutterError(NSError *error) {
     Boolean *_latestPayloadOpened;
 
     FlutterMethodChannel *_channel;
+    ALBBMANAnalytics *_man;
 }
 
 #pragma mark - 插件处理函数
@@ -294,16 +296,16 @@ static FlutterError *getFlutterError(NSError *error) {
 }
 
 - (void)userRegister:(FlutterMethodCall *)call result:(FlutterResult)result {
-    // NSString *userId = call.arguments[@"userId"];
-    // [_man userRegister:userId];
+     NSString *userId = call.arguments[@"userId"];
+     [_man userRegister:userId];
     result([NSNumber numberWithBool:TRUE]);
 }
 
 - (void)updateUserAccount:(FlutterMethodCall *)call
                    result:(FlutterResult)result {
-    // NSString *userId = call.arguments[@"userId"];
-    // NSString *username = call.arguments[@"username"];
-    // [_man updateUserAccount:username userid:userId];
+     NSString *userId = call.arguments[@"userId"];
+     NSString *username = call.arguments[@"username"];
+     [_man updateUserAccount:username userid:userId];
     result([NSNumber numberWithBool:TRUE]);
 }
 
@@ -325,53 +327,53 @@ static FlutterError *getFlutterError(NSError *error) {
 }
 
 - (void)trackPage:(FlutterMethodCall *)call result:(FlutterResult)result {
-    // ALBBMANPageHitBuilder *builder = [[ALBBMANPageHitBuilder alloc] init];
-    // NSString *pageName = call.arguments[@"pageName"];
-    // NSString *referrer = call.arguments[@"referrer"];
-    // NSNumber *duration = call.arguments[@"duration"];
-    // NSDictionary *properties = call.arguments[@"properties"];
+     ALBBMANPageHitBuilder *builder = [[ALBBMANPageHitBuilder alloc] init];
+     NSString *pageName = call.arguments[@"pageName"];
+     NSString *referrer = call.arguments[@"referrer"];
+     NSNumber *duration = call.arguments[@"duration"];
+     NSDictionary *properties = call.arguments[@"properties"];
 
-    // [builder setPageName:pageName];
-    // if(referrer != (NSString *)[NSNull null]) {
-    //     [builder setReferPage:referrer];
-    // }
-    // if (duration != (NSNumber *)[NSNull null]) {
-    //     [builder setDurationOnPage:duration.longValue];
-    // }
-    // if (properties != (NSDictionary *)[NSNull null]) {
-    //    NSLog(@"trackPage has properties: %d", properties != nil );
-    //     [builder setProperties:properties];
-    // }
+     [builder setPageName:pageName];
+     if(referrer != (NSString *)[NSNull null]) {
+         [builder setReferPage:referrer];
+     }
+     if (duration != (NSNumber *)[NSNull null]) {
+         [builder setDurationOnPage:duration.longValue];
+     }
+     if (properties != (NSDictionary *)[NSNull null]) {
+        NSLog(@"trackPage has properties: %d", properties != nil );
+         [builder setProperties:properties];
+     }
 
-    //   ALBBMANTracker *tracker = [[ALBBMANAnalytics getInstance] getDefaultTracker];
-    //   [tracker send:[builder build]];
+       ALBBMANTracker *tracker = [[ALBBMANAnalytics getInstance] getDefaultTracker];
+       [tracker send:[builder build]];
 
     result([NSNumber numberWithBool:TRUE]);
 }
 
 - (void)trackEvent:(FlutterMethodCall *)call result:(FlutterResult)result {
-    // ALBBMANCustomHitBuilder *builder = [[ALBBMANCustomHitBuilder alloc] init];
-    // NSString *pageName = call.arguments[@"pageName"];
-    // NSString *eventName = call.arguments[@"eventName"];
-    // NSNumber *duration = call.arguments[@"duration"];
-    // NSDictionary *properties = call.arguments[@"properties"];
+     ALBBMANCustomHitBuilder *builder = [[ALBBMANCustomHitBuilder alloc] init];
+     NSString *pageName = call.arguments[@"pageName"];
+     NSString *eventName = call.arguments[@"eventName"];
+     NSNumber *duration = call.arguments[@"duration"];
+     NSDictionary *properties = call.arguments[@"properties"];
 
-    // [builder setEventLabel:eventName];
+     [builder setEventLabel:eventName];
 
-    // if( pageName != (NSString *)[NSNull null]) {
-    // [builder setEventPage:pageName];
-    // }
+     if( pageName != (NSString *)[NSNull null]) {
+     [builder setEventPage:pageName];
+     }
 
-    // if (duration != (NSNumber *)[NSNull null]) {
-    //     [builder setDurationOnEvent:duration.longValue];
-    // }
+     if (duration != (NSNumber *)[NSNull null]) {
+         [builder setDurationOnEvent:duration.longValue];
+     }
 
-    // if(properties != (NSDictionary *)[NSNull null]) {
-    // [builder setProperties:properties];
-    // }
+     if(properties != (NSDictionary *)[NSNull null]) {
+     [builder setProperties:properties];
+     }
 
-    // ALBBMANTracker *tracker = [[ALBBMANAnalytics getInstance] getDefaultTracker];
-    // [tracker send:[builder build]];
+     ALBBMANTracker *tracker = [[ALBBMANAnalytics getInstance] getDefaultTracker];
+     [tracker send:[builder build]];
 
     result([NSNumber numberWithBool:TRUE]);
 }
@@ -417,9 +419,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [CloudPushSDK sendNotificationAck:launchOptions];
 
     // Mobile Analysis
-    // _man = [ALBBMANAnalytics getInstance];
+     _man = [ALBBMANAnalytics getInstance];
 //    [_man turnOnDebug];
-    // [_man autoInit];
+     [_man autoInit];
 
     //    [man setAppVersion: @""];
     //    [man setChannel: @""];

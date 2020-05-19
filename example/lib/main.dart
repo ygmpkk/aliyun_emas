@@ -33,11 +33,9 @@ class _MyAppState extends State<MyApp> {
       onInit: (String deviceId) async {
         print("callback deviceId => $deviceId");
       },
-
       onToken: (String token) async {
         print("callback token => $token");
       },
-
       onIosNotificationRegistered: (IosNotificationSettings msg) async {
         print("onIosSettingsRegistered: $msg");
 
@@ -74,6 +72,8 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _deviceId = deviceId;
     });
+
+   await  AliyunEmas.eventTrack.trackEvent(pageName: 'abc', eventName: 'bbb');
   }
 
   @override

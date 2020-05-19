@@ -1,8 +1,14 @@
 PODS:
+  - AlicloudMAN (1.0.12):
+    - AlicloudUT
+    - AlicloudUtils
+  - AlicloudUT (5.2.0.12):
+    - AlicloudUTDID
   - AlicloudUTDID (1.5.0.90)
   - AlicloudUtils (1.3.8):
     - AlicloudUTDID
   - aliyun_emas (0.0.1):
+    - AlicloudMAN (= 1.0.12)
     - EMASPushNonUT (= 1.9.9.1)
     - Flutter
   - EMASPushNonUT (1.9.9.1):
@@ -15,6 +21,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/aliyun/aliyun-specs.git:
+    - AlicloudMAN
+    - AlicloudUT
     - AlicloudUTDID
     - AlicloudUtils
     - EMASPushNonUT
@@ -26,9 +34,11 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
+  AlicloudMAN: b30246a50024f258b6a50590889275974bc09f73
+  AlicloudUT: b7673ac4e19b89857a22ca5651880c80525b5650
   AlicloudUTDID: 314b33cabbe33cf4b648a6789cc5cb91ba5065e4
   AlicloudUtils: 3e1106c726d4f9c80272b6e2135c561936173a10
-  aliyun_emas: 0c6f99863bbabcf914b46c5110a04f486004b278
+  aliyun_emas: 20c69329021da6d19c33a7131e759a5c757298b8
   EMASPushNonUT: 424899d3c9e1e44588296ec21347ef4e60917f18
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
 
