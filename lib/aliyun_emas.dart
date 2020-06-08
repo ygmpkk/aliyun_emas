@@ -240,10 +240,6 @@ class AliyunEmasPush {
   }
 
   FutureOr<void> openAppSettings() async {
-    if (!platform.isIOS) {
-      return null;
-    }
-
     return channel.invokeMethod("openAppSettings");
   }
 

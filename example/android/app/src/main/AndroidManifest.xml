@@ -10,8 +10,9 @@
     <application
         android:name=".MyApplication"
         android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
         android:label="aliyun_emas_example"
-        tools:replace="android:label">
+        tools:replace="android:allowBackup,android:label">
 
         <activity
             android:name=".MainActivity"
