@@ -214,17 +214,10 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
 
     try {
       intent.setAction(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
-
       intent.putExtra(Settings.EXTRA_APP_PACKAGE, activity.getPackageName());
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        intent.putExtra(Settings.EXTRA_CHANNEL_ID, activity.getApplicationInfo().uid);
-      }
-
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        intent.putExtra("app_package", activity.getPackageName());
-        intent.putExtra("app_uid", activity.getApplicationInfo().uid);
-      }
-
+      intent.putExtra(Settings.EXTRA_CHANNEL_ID, activity.getApplicationInfo().uid);
+      intent.putExtra("app_package", activity.getPackageName());
+      intent.putExtra("app_uid", activity.getApplicationInfo().uid);
     } catch(Exception e) {
       intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
       Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
