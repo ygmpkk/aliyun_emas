@@ -46,7 +46,7 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
   private CloudPushService pushService;
   private MANService manService;
   private Boolean _latestPayloadOpened = false;
-
+  private Boolean _inited = false;
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
@@ -218,7 +218,7 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
       intent.putExtra(Settings.EXTRA_CHANNEL_ID, activity.getApplicationInfo().uid);
       intent.putExtra("app_package", activity.getPackageName());
       intent.putExtra("app_uid", activity.getApplicationInfo().uid);
-    } catch(Exception e) {
+    } catch (Exception e) {
       intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
       Uri uri = Uri.fromParts("package", activity.getPackageName(), null);
       intent.setData(uri);
@@ -232,7 +232,12 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
   private void getDeviceId(MethodCall call, final Result result) {
     Log.d(TAG, "getDeviceId");
 
-    result.success(pushService.getDeviceId());
+    if (_inited) {
+      result.success(pushService.getDeviceId());
+    } else {
+      Log.e("UNINITED", "网络异常", null);
+      result.success("");
+    }
   }
 
   private void turnOnPushChannel(MethodCall call, final Result result) {
@@ -417,6 +422,9 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
       @Override
       public void onSuccess(String response) {
         Log.d(TAG, call.method + " success => " + response);
+        if (call.method == "turnOnPushChannel") {
+          _inited = true;
+        }
 
         result.success(response);
       }
@@ -424,6 +432,9 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
       @Override
       public void onFailed(String errorCode, String errorMessage) {
         Log.d(TAG, call.method + " fail => " + errorCode + ", erorrMessage => " + errorMessage);
+        if (call.method == "turnOnPushChannel") {
+          _inited = false;
+        }
         result.error(errorCode, errorMessage, null);
       }
     };

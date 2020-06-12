@@ -254,7 +254,11 @@ class AliyunEmasPush {
 
   /// 打开推送通道
   Future<bool> turnOnPushChannel() async {
-    await channel.invokeMethod("turnOnPushChannel");
+    try {
+      await channel.invokeMethod("turnOnPushChannel");
+    } on PlatformException catch (err) {
+      print("PlatformException: ${err.code}, ${err.message}");
+    }
     return true;
   }
 
@@ -426,7 +430,6 @@ class AliyunEmasEventTrack {
   Future<void> turnOffAutoPageTrack() async {
     return channel.invokeMethod("turnOffAutoPageTrack");
   }
-
 
   /// 用户注册
   Future<void> userRegister({
