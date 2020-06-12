@@ -46,7 +46,6 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
   private CloudPushService pushService;
   private MANService manService;
   private Boolean _latestPayloadOpened = false;
-  private Boolean _inited = false;
 
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
@@ -232,12 +231,7 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
   private void getDeviceId(MethodCall call, final Result result) {
     Log.d(TAG, "getDeviceId");
 
-    if (_inited) {
-      result.success(pushService.getDeviceId());
-    } else {
-      Log.e("UNINITED", "网络异常", null);
-      result.success("");
-    }
+    result.success(pushService.getDeviceId());
   }
 
   private void turnOnPushChannel(MethodCall call, final Result result) {
@@ -422,9 +416,6 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
       @Override
       public void onSuccess(String response) {
         Log.d(TAG, call.method + " success => " + response);
-        if (call.method == "turnOnPushChannel") {
-          _inited = true;
-        }
 
         result.success(response);
       }
@@ -432,9 +423,7 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
       @Override
       public void onFailed(String errorCode, String errorMessage) {
         Log.d(TAG, call.method + " fail => " + errorCode + ", erorrMessage => " + errorMessage);
-        if (call.method == "turnOnPushChannel") {
-          _inited = false;
-        }
+
         result.error(errorCode, errorMessage, null);
       }
     };
