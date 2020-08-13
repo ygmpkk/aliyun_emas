@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 import 'dart:convert';
 
@@ -277,14 +278,26 @@ class AliyunEmasPush {
   Future<void> bindAccount({
     String userId,
   }) async {
-    return channel.invokeMethod("bindAccount", {
-      "userId": userId,
-    });
+    try {
+      return channel.invokeMethod("bindAccount", {
+        "userId": userId,
+      });
+    } on PlatformException catch (err) {
+      print("PlatformException bindAccount: ${err.message}");
+    } catch (err) {
+      print("Catch bindAccount exception: ${err.message}");
+    }
   }
 
   /// 解绑账号
   Future<void> unbindAccount() async {
-    return channel.invokeMethod("unbindAccount");
+    try {
+      return channel.invokeMethod("unbindAccount");
+    } on PlatformException catch (err) {
+      print("PlatformException: ${err.message}");
+    } catch (err) {
+      print("Catch exception: ${err.message}");
+    }
   }
 
   /// 绑定标签
