@@ -241,11 +241,11 @@ class AliyunEmasPush {
   }
 
   FutureOr<void> openAppSettings() async {
-    return channel.invokeMethod("openAppSettings");
+    await channel.invokeMethod("openAppSettings");
   }
 
   Future<void> setDebug() async {
-    return channel.invokeMethod('setDebug');
+    await channel.invokeMethod('setDebug');
   }
 
   /// 获取设备标识
@@ -279,7 +279,7 @@ class AliyunEmasPush {
     String userId,
   }) async {
     try {
-      return channel.invokeMethod("bindAccount", {
+      await channel.invokeMethod("bindAccount", {
         "userId": userId,
       });
     } on PlatformException catch (err) {
@@ -292,7 +292,7 @@ class AliyunEmasPush {
   /// 解绑账号
   Future<void> unbindAccount() async {
     try {
-      return channel.invokeMethod("unbindAccount");
+      await channel.invokeMethod("unbindAccount");
     } on PlatformException catch (err) {
       print("PlatformException: ${err.message}");
     } catch (err) {
@@ -306,7 +306,7 @@ class AliyunEmasPush {
     List<String> tags,
     String aliasId,
   }) async {
-    return channel.invokeMethod("bindTag", {
+    await channel.invokeMethod("bindTag", {
       "target": target.name,
       "tags": tags,
       "aliasId": aliasId,
@@ -319,7 +319,7 @@ class AliyunEmasPush {
     List<String> tags,
     String aliasId,
   }) async {
-    return channel.invokeMethod("removeTag", {
+    await channel.invokeMethod("removeTag", {
       "target": target.name,
       "tags": tags,
       "aliasId": aliasId,
@@ -332,7 +332,7 @@ class AliyunEmasPush {
   Future<void> addAlias({
     String aliasId,
   }) async {
-    return channel.invokeMethod("addAlias", {
+    await channel.invokeMethod("addAlias", {
       "aliasId": aliasId,
     });
   }
@@ -341,7 +341,7 @@ class AliyunEmasPush {
   Future<void> removeAlias({
     String aliasId,
   }) async {
-    return channel.invokeMethod("removeAlias", {
+    await channel.invokeMethod("removeAlias", {
       "aliasId": aliasId,
     });
   }
@@ -355,7 +355,7 @@ class AliyunEmasPush {
     @required int endHour,
     @required int endMinute,
   }) async {
-    return channel.invokeMethod("setDoNotDisturb", {
+    await channel.invokeMethod("setDoNotDisturb", {
       "startHour": startHour,
       "startMinute": startMinute,
       "endHour": endHour,
@@ -365,22 +365,22 @@ class AliyunEmasPush {
 
   /// 关闭免打扰功能
   Future<void> closeDoNotDisturbMode() async {
-    return channel.invokeMethod("closeDoNotDisturbMode");
+    await channel.invokeMethod("closeDoNotDisturbMode");
   }
 
   /// 删除所有通知接口
   Future<void> clearNotifications() async {
-    return channel.invokeMethod("clearNotifications");
+    await channel.invokeMethod("clearNotifications");
   }
 
   /// 绑定电话号
   Future<void> bindPhoneNumber({@required String mobile}) async {
-    return channel.invokeMethod("bindPhoneNumber", {"mobile": mobile});
+    await channel.invokeMethod("bindPhoneNumber", {"mobile": mobile});
   }
 
   /// 解绑电话号
   Future<void> unbindPhoneNumber() async {
-    return channel.invokeMethod("unbindPhoneNumber");
+    await channel.invokeMethod("unbindPhoneNumber");
   }
 }
 
@@ -392,19 +392,19 @@ class AliyunEmasEventTrack {
 
   /// 进入页面
   Future<void> pageAppear() async {
-    return channel.invokeMethod("pageAppear");
+    await channel.invokeMethod("pageAppear");
   }
 
   /// 退出页面
   Future<void> pageDisAppear() async {
-    return channel.invokeMethod("pageDisAppear");
+    await channel.invokeMethod("pageDisAppear");
   }
 
   /// 更新页面埋点
   Future<void> updatePageProperties({
     @required Map<String, String> properties,
   }) async {
-    return channel.invokeMethod("updatePageProperties", {
+    await channel.invokeMethod("updatePageProperties", {
       "properties": properties,
     });
   }
@@ -416,7 +416,7 @@ class AliyunEmasEventTrack {
     int duration,
     Map<String, String> properties,
   }) async {
-    return channel.invokeMethod("trackPage", {
+    await channel.invokeMethod("trackPage", {
       "pageName": pageName,
       "referrer": referrer,
       "duration": duration,
@@ -431,7 +431,7 @@ class AliyunEmasEventTrack {
     int duration,
     Map<String, String> properties,
   }) async {
-    return channel.invokeMethod("trackEvent", {
+    await channel.invokeMethod("trackEvent", {
       "pageName": pageName,
       "eventName": eventName,
       "duration": duration,
@@ -448,7 +448,7 @@ class AliyunEmasEventTrack {
   Future<void> userRegister({
     @required String userId,
   }) async {
-    return channel.invokeMethod("userRegister", {"userId": userId});
+    await channel.invokeMethod("userRegister", {"userId": userId});
   }
 
   /// 登录/注销
@@ -456,7 +456,7 @@ class AliyunEmasEventTrack {
     @required String userId,
     @required String username,
   }) async {
-    return channel.invokeMethod("updateUserAccount", {
+    await channel.invokeMethod("updateUserAccount", {
       "userId": userId,
       "username": username,
     });
@@ -473,6 +473,7 @@ class AliyunEmasEventTrack {
 },
 "badge": 1,
 "sound": "default"
+
 },
 "Extras": {"key1": "value1"}
 }
