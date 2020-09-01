@@ -372,16 +372,6 @@ class AliyunEmasPush {
   Future<void> clearNotifications() async {
     await channel.invokeMethod("clearNotifications");
   }
-
-  /// 绑定电话号
-  Future<void> bindPhoneNumber({@required String mobile}) async {
-    await channel.invokeMethod("bindPhoneNumber", {"mobile": mobile});
-  }
-
-  /// 解绑电话号
-  Future<void> unbindPhoneNumber() async {
-    await channel.invokeMethod("unbindPhoneNumber");
-  }
 }
 
 class AliyunEmasEventTrack {
@@ -460,6 +450,16 @@ class AliyunEmasEventTrack {
       "userId": userId,
       "username": username,
     });
+  }
+
+  /// 绑定电话号
+  Future<void> bindPhoneNumber({@required String mobile}) async {
+    return channel.invokeMethod("bindPhoneNumber", {"mobile": mobile});
+  }
+
+  /// 解绑电话号
+  Future<void> unbindPhoneNumber() async {
+    return channel.invokeMethod("unbindPhoneNumber");
   }
 }
 
