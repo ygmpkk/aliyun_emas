@@ -395,12 +395,15 @@ public class AliyunEmasPlugin implements FlutterPlugin, ActivityAware, MethodCal
   private void trackEvent(MethodCall call, final Result result) {
     String pageName = call.argument("pageName");
     String eventName = call.argument("eventName");
-    Long duration = call.argument("duration");
     Map<String, String> properties = call.argument("properties");
 
     if (manService != null) {
       MANHitBuilders.MANCustomHitBuilder builder = new MANHitBuilders.MANCustomHitBuilder(eventName);
-      builder.setDurationOnEvent(duration);
+      if (call.argument("duration") != null) {
+        Long duration = call.argument("duration");
+        builder.setDurationOnEvent(duration);
+      }
+
       builder.setEventPage(pageName);
       builder.setProperties(properties);
 
